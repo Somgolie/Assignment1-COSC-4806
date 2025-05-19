@@ -15,10 +15,12 @@ if ($username == $valid_username && $password == $valid_password) {
 }
 else{
     if(!isset($_SESSION['attempts'])){
-      $_SESSION['attempts'] = 1;
+      $_SESSION['attempts'] = 1; 
     }else{
       $_SESSION['attempts'] = $_SESSION['attempts'] + 1;
     }
-  echo "Incorrect username or password. You have tried " . $_SESSION['attempts'] . " times.";
+    header("Location: /login.php");
+  
+  
 }
 ?>

@@ -1,6 +1,8 @@
 <?php 
 session_start();
-
+if (!isset($_SESSION['authenticated'])){
+  header("Location: /login.php");
+}
 $current_date = date("l, F j, Y");
 ?>
 <!DOCTYPE html>
@@ -13,7 +15,9 @@ $current_date = date("l, F j, Y");
 <h1>Assignment 1</h1>
   <p> Welcome Back, <?=$_SESSION['username'] ?></p>
   <p> Today is <?=$current_date?></p>
-<p><a href='./login.php'>Log in Here!</a></p>
 
 </body>
+  <footer>
+    <p><a href='./logout.php'>Log out Here!</a></p>
+  </footer>
 </html> 

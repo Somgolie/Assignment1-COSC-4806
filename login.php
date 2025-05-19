@@ -1,3 +1,12 @@
+<?php 
+session_start();
+if(!isset($_SESSION['attempts'])){
+echo "";
+}
+else{
+  echo "Incorrect username or password. You have tried " . $_SESSION['attempts'] . " times.";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
